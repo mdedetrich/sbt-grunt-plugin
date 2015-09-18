@@ -23,7 +23,7 @@ object SbtGruntPlugin extends Plugin {
   def gruntTask(taskName: String) = streams map { (s: TaskStreams) =>
       val retval = runGrunt(taskName)
       if (retval != 0) {
-        throw new Exception("Grunt task %s failed".format(taskName))
+        throw new Exception(s"Grunt task $taskName failed")
       }
   }
 
